@@ -1,0 +1,146 @@
+body {
+    margin: 0 auto;
+/*    overflow: hidden;*/
+    background-color: black;
+    align-content: right;
+}
+
+body, svg, #page-wrapper {
+    height: 100vh;
+    width: 100vw;
+}
+
+svg {
+    background-color: #111;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: -1;
+}
+
+#panel {
+    background-color: #111;
+}
+
+.area {
+    fill: #040404;
+    stroke: #020202;
+    stroke-width: 2px;
+}
+
+#page-wrapper {
+/*    overflow-y: scroll; */
+    float: right;
+/*    position: absolute;*/
+    right: 0;
+    box-sizing: border-box;
+    padding: 1em;
+    padding-left: 2em;
+    opacity: 0;
+}
+h2 {
+			font-size: 1em;
+		}
+
+		h3 {
+			font-size: 0.8em;
+		}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+    font-family: Raleway, Helvetica, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin: 0 0 1em 0;
+    text-transform: uppercase;
+    transition: opacity 0.5s ease, transform 0.5s ease, filter 0.25s ease;
+    transform: translateX(0);
+    transition-delay: 0.65s;
+    filter: blur(0);
+    opacity: 1;
+    border-bottom: solid 2px rgba(255, 255, 255, 0.125);
+    font-size: 2.25em;
+    margin-bottom: 0.8em;
+    padding-bottom: 0.4em;
+}
+
+h1 a{
+    color: inherit;
+    text-decoration: none;
+}
+
+p {
+    transition: opacity 0.5s ease, transform 0.5s ease, filter 0.25s ease;
+    transform: translateX(0);
+    transition-delay: 0.8s;
+    filter: blur(0);
+    opacity: 1;
+    font-family: Raleway, Helvetica, sans-serif;
+    font-size: 1em;
+    font-weight: 200;
+    letter-spacing: 0.1em;
+    line-height: 2;
+    text-transform: uppercase;
+}
+
+	body, input, select, textarea {
+		color: #ffffff;
+		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		font-size: 16.5pt;
+		font-weight: 300;
+		line-height: 1.65;
+	}
+
+#banner .logo .icon {
+    border-radius: 100%;
+    border: solid 2px rgba(255, 255, 255, 0.125);
+    cursor: default;
+    display: inline-block;
+    font-size: 2em;
+    height: 2.25em;
+    line-height: 2.25em;
+    text-align: center;
+    width: 2.25em;
+}
+.icon {
+    text-decoration: none;
+    border-bottom: none;
+    position: relative;
+}
+.menu-closed {
+    width: 0 !important;
+}
+
+/*slideout*/
+
+.slideout-menu {
+  position: fixed;
+/*  left: 0;*/
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  width: 256px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: none;
+}
+
+.slideout-panel {
+  position:relative;
+  z-index: 1;
+  will-change: transform;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+  overflow: hidden;
+    
+}
+
+.slideout-open .slideout-menu {
+  display: block;
+}
+
+/*slideout*/
