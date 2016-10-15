@@ -1,3 +1,4 @@
+
 var eventwindowresize = function () {};
 d3.csv("profile.csv", function (error, csv) {
     "use strict";
@@ -32,14 +33,32 @@ d3.csv("profile.csv", function (error, csv) {
                 data.push(Number(x.l / 25));
             }
         });
-        eventwindowresize = function () {
+    
+        var updatevariables = function () {
             cwinh = window.innerHeight;
             cwinw = window.innerWidth;
             cdatal = data.length;
             cache = cwinh / cdatal;
             cacher = 360 / cdatal;
             
+        }
         
+        var updatepanelw = function () {
+            var cfacew = Math.round(Math.max.apply(Math,data)*cache),
+                wrappersize;
+            if (3*cfacew<cwinw)
+                wrappersize = cwinw - cfacew + "px";
+            else 
+                wrappersize = 100 + "%";
+
+            console.log(cfacew+" "+cwinw);
+            return d3.select('#page-wrapper')
+              .style("width", wrappersize);
+        }
+        
+        var introanimation = function () {
+            updatevariables();
+            
             lineGraph
             .datum(data)
             .attr("class", "area")
@@ -59,18 +78,19 @@ d3.csv("profile.csv", function (error, csv) {
             .attr("transform", "translate(0,0)")
             .attr("d", lineFunction)
             .on("end", function() {
-                var cfacew = Math.round(Math.max.apply(Math,data)*cache),
-                    wrappersize;
-                if (3*cfacew<cwinw)
-                    wrappersize = cwinw - cfacew + "px";
-                else 
-                    wrappersize = 100 + "%";
-                d3.select('#page-wrapper')
-                  .style("width", wrappersize)
-                  .transition()
-                  .duration(700)
-                  .style("opacity", 1); 
+                updatepanelw()
+                .transition()
+                .duration(700)
+                .style("opacity", 1);
             });
+        }
+        
+        eventwindowresize = function () {
+            updatevariables();
+        
+            lineGraph
+            .attr("d", lineFunction)
+            updatepanelw();
         };
-        eventwindowresize();
+        introanimation();
 });

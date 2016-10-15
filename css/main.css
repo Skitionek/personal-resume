@@ -151,7 +151,7 @@ a.special: not(.button):before {
 a.special: not(.button):before {
     border-radius: 100%;
     border: solid 2px rgba(255, 255, 255, 0.125);
-    content: '\f105';
+    content: '\f0eb';
     display: inline-block;
     font-size: 1.25em;
     height: 2em;
@@ -721,13 +721,15 @@ input[type="submit"]: disabled,button: disabled,.button: disabled {
 
 #page-wrapper {
     transition: filter 0.25s ease;
+    margin-left: auto;
+    margin-right: 0px;
 }
 
 #menu {
     background-color: #313131;
     z-index: 1;
 /*    align-items: center;*/
-    display: flex;
+/*    display: flex;*/
 /*    justify-content: center;*/
     pointer-events: none;
 /*      transition: 0.5s linear all;*/
@@ -821,7 +823,7 @@ input[type="submit"]: disabled,button: disabled,.button: disabled {
 
 #banner .inner {
     margin: 0 auto;
-    width: 55em;
+/*    width: 55em;*/
 }
 
 #banner .logo {
@@ -936,7 +938,7 @@ input[type="submit"]: disabled,button: disabled,.button: disabled {
 .wrapper .inner {
     padding: 3em 0 1em 0;
     margin: 0 auto;
-    width: 55em;
+/*    width: 55em;*/
 }
 
 .wrapper.style2 {

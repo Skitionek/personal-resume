@@ -7,18 +7,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/main.css">
 
-    <script>
-        (function(angular) {
-            'use strict';
-            var mainApp = angular.module("mainApp", []);
-
-            mainApp.controller('MenuController', ['$scope', function($scope) {
-                $scope.closed = true;
-        }]);
-        })(window.angular);
-    </script>
 </head>
-<body ng-app="mainApp" ng-controller="MenuController">
+<body ng-app="mainApp" ng-controller="MenuController" resize>
     
 
 				<!-- Menu -->
@@ -35,8 +25,6 @@
 							<a href="#" class="close">Close</a>
 						</div>
 					</nav>
-    <div id="panel">
-    <div id="page-wrapper">
 
 				<!-- Header -->
 					<header id="header" class="alt">
@@ -45,14 +33,16 @@
 							<a href="#menu" class="toggle-button">Menu</a>
 						</nav>
 					</header>
+    <div id="panel">
+    <div id="page-wrapper">
 
 
 				<!-- Banner -->
 					<section id="banner">
-						<div class="inner">
-							<div class="logo"><span class="icon fa-diamond"></span></div>
-							<h2>This is Solid State</h2>
-							<p>Another free + fully responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
+						<div class="inner" style="text-transform:uppercase;">
+							<div class="logo"><span class="icon fa-lightbulb-o"></span></div>
+							<h2>Dominik Maszczyk</h2>
+							<p>...</p>
 						</div>
 					</section>
 
@@ -179,6 +169,39 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="js/use3d.js"></script>
     
+    <script>
+        (function(angular) {
+            'use strict';
+            var mainApp = angular.module("mainApp", []);
+
+            mainApp.controller('MenuController', ['$scope', function($scope) {
+                $scope.closed = true;
+            }]);
+            
+            mainApp.directive('resize', function ($window) {
+                return function (scope, element, attr) {
+
+                    var w = $window;
+                    scope.$watch(function () {
+                        return {
+                            'h': w.innerHeight, 
+                            'w': w.innerWidth
+                        };
+                    }, function (newValue) {
+                        scope.windowHeight = newValue.h;
+                        scope.windowWidth = newValue.w;
+
+                      console.log(newValue.h+"dupa"+newValue.w);
+                        eventwindowresize();
+                    }, true);
+
+                    angular.element(w).bind('resize', function () {
+                        scope.$apply();
+                    });
+                }
+            }); 
+        })(window.angular);
+    </script>
     <script src="js/slideout.js"></script>
     <script>
       var slideout = new Slideout({
