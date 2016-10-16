@@ -598,6 +598,7 @@ input[type="submit"]: disabled,button: disabled,.button: disabled {
     top: 0;
     width: 100%;
     z-index: 10000;
+    opacity: 0;
 }
 
 #header h1 {
@@ -634,7 +635,14 @@ input[type="submit"]: disabled,button: disabled,.button: disabled {
 
 #header nav a:before {
     float: right;
-    margin-left: 0.75em;
+/*    margin-left: 0.75em;*/
+}
+
+#header nav a div {
+    float:right;
+    overflow: hidden;
+    width: 4em;
+    transition: width 2;
 }
 
 #header nav a[href="#menu"] {

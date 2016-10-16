@@ -7,8 +7,14 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/main.css">
 
+    <!-- Chrome, Firefox OS, Opera and Vivaldi -->
+    <meta name="theme-color" content="#111">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#111">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#111">
 </head>
-<body ng-app="mainApp" ng-controller="MenuController" resize>
+<body ng-app="mainApp" ng-controller="MenuController">
     
 
 				<!-- Menu -->
@@ -26,23 +32,33 @@
 						</div>
 					</nav>
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">Maszczyk Dominik</a></h1>
-						<nav>
-							<a href="#menu" class="toggle-button">Menu</a>
-						</nav>
-					</header>
-    <div id="panel">
-    <div id="page-wrapper">
 
+<!-- Header -->
+    <header id="header" class="alt">
+        <h1><a href="index.html">Maszczyk Dominik</a></h1>
+        <nav>
+            <a href="#menu" class="toggle-button" ng-click="closed = !closed"><div ng-class="{'menu-closed':menucolapsed}">Menu&nbsp;&nbsp;</div></a>
+        </nav>
+    </header>
+    
+    <div id="panel" ng-click="closed=true">
+        
+    <div id="page-wrapper" resize>
 
 				<!-- Banner -->
 					<section id="banner">
 						<div class="inner" style="text-transform:uppercase;">
-							<div class="logo"><span class="icon fa-lightbulb-o"></span></div>
+							<div class="logo">
+                                <span class="icon fa-lightbulb-o"
+                                      style="
+background: -webkit-radial-gradient(50% 50%, closest-side, rgba(255,255,0,0.8) {{ooff10}}%, rgba(255,0,0,0) {{ooff90}}%);
+background: -o-radial-gradient(50% 50%, closest-side, rgba(255,255,0,0.8) {{ooff10}}%, rgba(255,0,0,0) {{ooff90}});
+background: -moz-radial-gradient(50% 50%, closest-side, rgba(255,255,0,0.8) {{ooff10}}%, rgba(255,0,0,0) {{ooff90}});
+background: radial-gradient(50% 50%, closest-side, rgba(255,255,0,0.8) {{ooff10}}%, rgba(255,0,0,0) {{ooff90}});
+                                      " scroll></span>
+                            </div>
 							<h2>Dominik Maszczyk</h2>
-							<p>...</p>
+							<p>ELECTRONIC ENGINEER, SOFTWARE/<b>WEB</b> DEVELOPER WITH PASSION FOR HIS FIELD</p>
 						</div>
 					</section>
 
@@ -52,11 +68,16 @@
 						<!-- One -->
 							<section id="one" class="wrapper spotlight style1">
 								<div class="inner">
-									<a href="#" class="image"></a>
 									<div class="content">
-										<h2 class="major">Magna arcu feugiat</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
+										<h2 class="major">About this webpage</h2>
+										<p>
+                                            <ul style="list-style-type:none;">
+                                                <li>Face profile and intro is ganerated as a dynamic chart (<b>d3.js</b>).</li>
+                                                <li>Data for this chart was generated from bmp file with <b>bash</b> script and stored in csv file.</li>
+                                                <li>Generated chart is <b>fully responsive</b> to view size change. In order achieve live tuning the <b>Angular.js</b> data binding was used instead of standart window event.</li>
+                                                <li>Menu was build based on <b>slideout</b> library in order to user experience on mobile browsers (<b>slide left gesture</b>).</li>
+                                            </ul> 
+                                        </p>
 									</div>
 								</div>
 							</section>
@@ -68,7 +89,6 @@
 									<div class="content">
 										<h2 class="major">Tempus adipiscing</h2>
 										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
 									</div>
 								</div>
 							</section>
@@ -80,7 +100,6 @@
 									<div class="content">
 										<h2 class="major">Nullam dignissim</h2>
 										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
 									</div>
 								</div>
 							</section>
@@ -95,30 +114,23 @@
 											<a href="#" class="image"></a>
 											<h3 class="major">Sed feugiat lorem</h3>
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
 										</article>
 										<article>
 											<a href="#" class="image"></a>
 											<h3 class="major">Nisl placerat</h3>
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
 										</article>
 										<article>
 											<a href="#" class="image"></a>
 											<h3 class="major">Ante fermentum</h3>
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
 										</article>
 										<article>
 											<a href="#" class="image"></a>
 											<h3 class="major">Fusce consequat</h3>
 											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
 										</article>
 									</section>
-									<ul class="actions">
-										<li><a href="#" class="button">Browse All</a></li>
-									</ul>
 								</div>
 							</section>
 
@@ -128,6 +140,7 @@
 					<section id="footer">
 						<div class="inner">
 							<h2 class="major">Get in touch</h2>
+<!--
 							<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
 							<form method="post" action="#">
 								<div class="field">
@@ -146,20 +159,24 @@
 									<li><input value="Send Message" type="submit"></li>
 								</ul>
 							</form>
+-->
 							<ul class="contact">
 								<li class="fa-home">
-									Untitled Inc<br>
-									1234 Somewhere Road Suite #2894<br>
-									Nashville, TN 00000-0000
+									Dominik Maszczyk<br>
+									2800 Kgs.Lyngby<br>
+									DENMARK
 								</li>
-								<li class="fa-phone">(000) 000-0000</li>
-								<li class="fa-envelope"><a href="#">information@untitled.tld</a></li>
+								<li class="fa-phone">(+45) 501 008 45</li>
+								<li class="fa-envelope"><a href="#">Skitionek@gmail.com</a></li>
+								<li class="fa-linkedin"><a href="//linkedin.com/in/dominik-maszczyk">Dominik-Maszczyk</a></li>
+<!--
 								<li class="fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
 								<li class="fa-facebook"><a href="#">facebook.com/untitled-tld</a></li>
 								<li class="fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>
+-->
 							</ul>
 							<ul class="copyright">
-								<li>© Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>Design and code <a href="http://linkedin.com/in/dominik-maszczyk" style="font-weight:bold;">DOMINIK MASZCZYK</a></li>
 							</ul>
 						</div>
 					</section>
@@ -167,8 +184,8 @@
 			</div>
         </div>
     <script src="https://d3js.org/d3.v4.min.js"></script>
-    <script src="js/use3d.js"></script>
-    
+    <script src="js/used3.js"></script>
+    <script src="js/slideout.js"></script>
     <script>
         (function(angular) {
             'use strict';
@@ -176,6 +193,10 @@
 
             mainApp.controller('MenuController', ['$scope', function($scope) {
                 $scope.closed = true;
+                $scope.ooff10 = 0;
+                $scope.ooff90 = 0;
+                $scope.menucolapsed = false;
+                
             }]);
             
             mainApp.directive('resize', function ($window) {
@@ -200,22 +221,41 @@
                     });
                 }
             }); 
-        })(window.angular);
-    </script>
-    <script src="js/slideout.js"></script>
-    <script>
-      var slideout = new Slideout({
-        'panel': document.getElementById('panel'),
-        'menu': document.getElementById('menu'),
-        'padding': 256,
-        'tolerance': 70,
-        'side': 'right'
-      });
+            mainApp.directive("scroll", function ($window) {
+                return function(scope, element, attrs) {
+                    angular.element($window).bind("scroll", function() {
+                        scope.ooff = this.pageYOffset;
+                        var tmp = scope.ooff-60;
+                        if (tmp<=10) scope.ooff10 = tmp;
+                        if (tmp<=90) scope.ooff90 = tmp;
+                        scope.menucolapsed = scope.ooff>90;
+                        scope.$apply();
+                    });
+                };
+            });
+        
+            var slideout = new Slideout({
+                'panel': document.getElementById('panel'),
+                'menu': document.getElementById('menu'),
+                'padding': 256,
+                'tolerance': 70,
+                'side': 'right'
+            });
+            
+            // Toggle button
+            document.querySelector('.toggle-button').addEventListener('click', function() {
+                slideout.toggle();
+            });
+            
+            slideout.on('beforeopen', function() {
+              document.querySelector('.fixed').classList.add('fixed-open');
+            });
 
-      // Toggle button
-      document.querySelector('.toggle-button').addEventListener('click', function() {
-        slideout.toggle();
-      });
+            slideout.on('beforeclose', function() {
+              document.querySelector('.fixed').classList.remove('fixed-open');
+            });
+            
+        })(window.angular);
     </script>
     
 </body>

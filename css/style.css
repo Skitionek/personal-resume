@@ -14,7 +14,7 @@ svg {
 
 svg {
     background-color: #111;
-    position: absolute;
+    position: fixed;
     top:0;
     left: 0;
     z-index: -1;
@@ -131,7 +131,7 @@ p {
 .slideout-panel {
   position:relative;
   z-index: 1;
-  will-change: transform;
+/*  will-change: transform;*/
 }
 
 .slideout-open,
@@ -143,6 +143,16 @@ p {
 
 .slideout-open .slideout-menu {
   display: block;
+}
+
+/*hack for fixed*/
+.fixed {
+  backface-visibility: hidden;
+  transition: transform 300ms ease;
+}
+
+.fixed-open {
+    transform: translate3d(256px, 0px, 0px);
 }
 
 /*slideout*/
