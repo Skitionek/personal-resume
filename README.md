@@ -1,5 +1,5 @@
 # personal-resume
-Demo project of personal resume with usage of 3d.js, slideout.js and Angular.js.
+
 <div class="inner">
 	<div class="content">
 		<h2 class="major">About this webpage</h2>
