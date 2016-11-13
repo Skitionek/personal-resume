@@ -3,8 +3,12 @@
 
 .fc-state-default {
        background-image: linear-gradient(to bottom,#6f6f6f,#383838);
-       border-color: #6f6f6f;
-       background-color: #6f6f6f;
+       border-color: #383838;
+       background-color: #383838;
+}
+
+.fc-unthemed .fc-content, .fc-unthemed .fc-divider, .fc-unthemed .fc-list-heading td, .fc-unthemed .fc-list-view, .fc-unthemed .fc-popover, .fc-unthemed .fc-row, .fc-unthemed tbody, .fc-unthemed td, .fc-unthemed th, .fc-unthemed thead {
+    border-color: #383838;
 }
 
 
