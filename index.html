@@ -276,6 +276,8 @@ $(document).ready(function() {
 				googleCalendarId: 'l8h5mfckdui2f7fjqd0uff7b2phv03s0@import.calendar.google.com'
 			    }
 			],
+	    		firstDay: 1,
+			hiddenDays: [7],
 			eventClick: function(event) {
 				// opens events in a popup window
 				window.open(event.url, 'gcalevent', 'width=700,height=600');
