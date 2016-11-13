@@ -4,6 +4,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
 
+	<link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.css' />
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js'></script>
+	<script src='//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.js'></script>
+	<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/gcal.js'></script>
+	
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/main.css">
 
@@ -13,11 +19,7 @@
     <meta name="msapplication-navbutton-color" content="#111">
     <!-- iOS Safari -->
     <meta name="apple-mobile-web-app-status-bar-style" content="#111">
-	<link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.css' />
-<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js'></script>
-<script src='//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.js'></script>
-	<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/gcal.js'></script>
+
 </head>
 <body ng-app="mainApp" ng-controller="MenuController">
     
@@ -249,7 +251,7 @@ $(document).ready(function() {
 			header: {
 				left: 'prev,next today',
 				center: 'title',
-				right: 'agendaDay,agendaWeek,month'
+				right: 'agendaDay,agendaWeek'
 			},
 
 			displayEventTime: true, // don't show the time column in list view
@@ -283,22 +285,6 @@ $(document).ready(function() {
 			loading: function(bool) {
 				$('#loading').toggle(bool);
 			}
-	    
-        /*googleCalendarApiKey: '247863987527-btg3qun3k4bg7gs7kurkouk7449h0cte.apps.googleusercontent.com	',
-        eventSources: [
-            {
-                googleCalendarId: 'skitionek@gmail.com'
-            },
-            {
-                googleCalendarId: '8e9cr0rbjtj2jdn9auvfeccr70@group.calendar.google.com'
-            },
-            {
-                googleCalendarId: '9817iolq8phca9q01u3pdefrj4@group.calendar.google.com'
-            },
-            {
-                googleCalendarId: 'l8h5mfckdui2f7fjqd0uff7b2phv03s0@import.calendar.google.com'
-            }
-        ]*/
     });
 });
 
