@@ -247,7 +247,7 @@ background: radial-gradient(50% 50%, closest-side, rgba(255,255,0,0.8) {{ooff10}
 $(document).ready(function() {
     $('#calendar').fullCalendar({
 	    
-
+			defaultView: 'agendaWeek',
 			header: {
 				left: 'prev,next today',
 				center: 'title',
@@ -277,7 +277,7 @@ $(document).ready(function() {
 			    }
 			],
 	    		firstDay: 1,
-			hiddenDays: [6,7],
+			hiddenDays: [7],
 	    		businessHours: {
 			    // days of week. an array of zero-based day of week integers (0=Sunday)
 			    dow: [ 1, 2, 3, 4, 5, 6 ], // Monday - Thursday
