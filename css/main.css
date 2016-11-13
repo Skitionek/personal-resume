@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:200,700|Source+Sans+Pro:300,600,300italic,600italic");
 
 .fc-state-default {
-       
+       background-image: linear-gradient(to bottom,#6f6f6f,#383838);
 }
 
 
