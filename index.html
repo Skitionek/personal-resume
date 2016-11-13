@@ -244,7 +244,35 @@ background: radial-gradient(50% 50%, closest-side, rgba(255,255,0,0.8) {{ooff10}
 
 $(document).ready(function() {
     $('#calendar').fullCalendar({
-        googleCalendarApiKey: '247863987527-btg3qun3k4bg7gs7kurkouk7449h0cte.apps.googleusercontent.com	',
+	    
+
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,listYear'
+			},
+
+			displayEventTime: false, // don't show the time column in list view
+
+			// THIS KEY WON'T WORK IN PRODUCTION!!!
+			// To make your own Google API key, follow the directions here:
+			// http://fullcalendar.io/docs/google_calendar/
+			googleCalendarApiKey: 'AIzaSyDcnW6WejpTOCffshGDDb4neIrXVUA1EAE',
+		
+			// US Holidays
+			events: 'en.usa#holiday@group.v.calendar.google.com',
+			
+			eventClick: function(event) {
+				// opens events in a popup window
+				window.open(event.url, 'gcalevent', 'width=700,height=600');
+				return false;
+			},
+			
+			loading: function(bool) {
+				$('#loading').toggle(bool);
+			}
+	    
+        /*googleCalendarApiKey: '247863987527-btg3qun3k4bg7gs7kurkouk7449h0cte.apps.googleusercontent.com	',
         eventSources: [
             {
                 googleCalendarId: 'skitionek@gmail.com'
@@ -258,7 +286,7 @@ $(document).ready(function() {
             {
                 googleCalendarId: 'l8h5mfckdui2f7fjqd0uff7b2phv03s0@import.calendar.google.com'
             }
-        ]
+        ]*/
     });
 });
 
