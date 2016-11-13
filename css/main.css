@@ -3,6 +3,8 @@
 
 .fc-state-default {
        background-image: linear-gradient(to bottom,#6f6f6f,#383838);
+       border-color: #6f6f6f;
+       background-color: #6f6f6f;
 }
 
 
