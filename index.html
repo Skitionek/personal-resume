@@ -253,6 +253,8 @@ $(document).ready(function() {
 				center: 'title',
 				right: 'agendaDay,agendaWeek'
 			},
+	    		contentHeight: 'auto',
+	    		height: 'auto',
 			allDaySlot: false,
 	    		slotDuration: '01:00:00',
 	    		minTime: '07:00:00',
@@ -281,7 +283,7 @@ $(document).ready(function() {
 			    }
 			],
 	    		firstDay: 1,
-			hiddenDays: [1],
+			hiddenDays: [7],
 	    		businessHours: {
 			    // days of week. an array of zero-based day of week integers (0=Sunday)
 			    dow: [ 1, 2, 3, 4, 5, 6 ], // Monday - Thursday
