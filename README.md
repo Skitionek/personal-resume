@@ -1,4 +1,5 @@
 # ([My personal resume website](https://skitionek.github.io/personal-resume/ "Click to go to the website"))
+Made out of need as a demo for my job application.
 
 # About 
 * Face profile and intro is ganerated as a dynamic chart (d3.js).
